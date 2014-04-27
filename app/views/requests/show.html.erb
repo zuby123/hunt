@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @request.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @request.description %>
+</p>
+
+<p>
+  <strong>Budget:</strong>
+  <%= @request.budget %>
+</p>
+
+<p>
+  <strong>Date response by:</strong>
+  <%= @request.date_response_by %>
+</p>
+
+<p>
+  <strong>Date request executed:</strong>
+  <%= @request.date_request_executed %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @request.location %>
+</p>
+
+<p>
+  <strong>Company name:</strong>
+  <%= @request.company_name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @request.address %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @request.category %>
+</p>
+
+<p>
+  <strong>Sub category:</strong>
+  <%= @request.sub_category %>
+</p>
+
+<%= link_to 'Edit', edit_request_path(@request) %> |
+<%= link_to 'Back', requests_path %>
