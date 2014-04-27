@@ -9,4 +9,19 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Hunt::Application.config.secret_key_base = '6f8ff445d92ab2ecd8875066d1600270340fda9b7fbb8e79e154f0e2a88867f11b30b997c7da9210c60a0b1a0c7ad53d4d254549994844cbf07c28b645c2f40b'
+require 'securerandom'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token.
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+
+Hunt::Application.config.secret_key_base = secure_token
