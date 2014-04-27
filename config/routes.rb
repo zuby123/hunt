@@ -1,6 +1,9 @@
 Hunt::Application.routes.draw do
-  get "static_pages/home"
-  get "static_pages/help"
+  get "users/new"
+  root 'static_pages#home'
+  match '/help', to: 'static_pages#help', via: 'get'
+  match '/signup', to: 'users#new', via: 'get'
+  
   resources :requests
 
   resources :users
