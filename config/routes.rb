@@ -1,12 +1,12 @@
 Hunt::Application.routes.draw do
-  get "users/new"
+  resources :users
   root 'static_pages#home'
   match '/help', to: 'static_pages#help', via: 'get'
   match '/signup', to: 'users#new', via: 'get'
   
   resources :requests
 
-  resources :users
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
